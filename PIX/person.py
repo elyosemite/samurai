@@ -9,6 +9,20 @@ class Person:
         print(variavel_valida_dentro_do_init)
     
     def comer(self):
+        if self.comendo:
+            print(f'{self.nome} já está comendo')
+            return
+
         print(f'{self.comendo} está comendo');
         self.comendo = True
+    
+    def falar(self):
+        print(f'Falando ...')
+
+    def parar_comer(self):
+        if not self.comendo:
+            print(f'{self.nome} Não está comendo')
+            return
         
+        print(f'{self.nome} parou ded comer.')
+        self.comendo = False

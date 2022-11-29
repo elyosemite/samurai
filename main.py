@@ -1,4 +1,10 @@
-from PIX import Person
+from PIX import (
+    Person,
+    User
+)
 
 p1 = Person('Yuri', 24)
-p1.comer()
+user = User()
+
+p1.falar()
+user.PegarInfo()
