@@ -1,4 +1,5 @@
 from datetime import datetime
+from random import randint
 
 class Person:
     ano_atual = int(datetime.strftime(datetime.now(), '%Y'))
@@ -53,8 +54,15 @@ class Person:
         self.comendo = False
     
     def obter_ano_nascimento(self):
-        return self.ano_atual - self.idade
+        print(self.ano_atual - self.idade)
 
+    # Method Factory
     @classmethod
-    def por_ano_nascimento(cls):
-        pass
+    def person_factory(cls, nome, ano_nascimento):
+        idade = cls.ano_atual - ano_nascimento
+        return cls(nome, idade)
+
+    @staticmethod
+    def gerar_id():
+        rand = randint(10000, 19999)
+        return rand
