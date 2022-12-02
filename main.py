@@ -3,7 +3,10 @@ from PIX import (
     User
 )
 
-from models import Product
+from models import (
+    Product,
+    User
+)
 
 p1 = Person('Yuri', 24)
 user = User()
@@ -21,3 +24,16 @@ camisa = Product("Camisa", 3)
 
 print(computer.name, computer.price)
 print(camisa.name ,camisa.price)
+
+# Trabalhando com atributo de classe
+
+a1 = AnotherFile()
+a2 = AnotherFile()
+
+a1.algum_atributo_meu = 457454
+
+print(a1.__dict__)
+print(a2.__dict__)
+
+print(a1.algum_atributo_meu)
+print(a2.algum_atributo_meu)

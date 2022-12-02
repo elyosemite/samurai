@@ -1,5 +1,3 @@
-from msilib.schema import Property
-
 class Product(object):
     """description of class"""
     def __init__(self, name, price) -> None:
