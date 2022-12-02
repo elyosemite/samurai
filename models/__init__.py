@@ -1,2 +1,4 @@
 from .product import Product
-from .another_file import AnotherFile
+from .user import User
+from .writer import Writer
+from .pen import Pen

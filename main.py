@@ -1,4 +1,4 @@
-from PIX import (
+from pix import (
     Person,
     User
 )
@@ -27,8 +27,8 @@ print(camisa.name ,camisa.price)
 
 # Trabalhando com atributo de classe
 
-a1 = AnotherFile()
-a2 = AnotherFile()
+a1 = User()
+a2 = User()
 
 a1.algum_atributo_meu = 457454
 

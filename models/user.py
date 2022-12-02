@@ -3,3 +3,6 @@ class User:
 
     def __init__(self):
         pass
+
+    def get_information():
+        print("I am Zetta user.")
