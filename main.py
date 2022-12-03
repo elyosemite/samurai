@@ -10,7 +10,9 @@ from models import (
     Pen,
     WriteMachine,
     ProductCart,
-    AnotherProduct
+    AnotherProduct,
+    Customer,
+    Address
 )
 
 p1 = Person('Yuri', 24)
@@ -65,3 +67,23 @@ product_cart.insert_product(product03)
 product_cart.show_products()
 print("\n\nTotal a pagar: ")
 product_cart.total_sum()
+
+# Composition
+
+customer01 = Customer('Yuri')
+customer02 = Customer('João')
+customer03 = Customer('Beatriz')
+
+customer01.insert_address('Maceió', 'AL')
+customer01.insert_address('Batalha', 'AL')
+customer01.insert_address('Belo Horizonte', 'MG')
+customer01.show_address()
+
+customer02.insert_address('Maceió', 'AL')
+customer02.insert_address('São Paulo', 'SP')
+customer02.show_address()
+
+customer03.insert_address('Porto Alegre', 'RS')
+customer03.insert_address('Curitiba', 'PR')
+customer03.insert_address('Bauneário Camburiú', 'SC')
+customer03.show_address()

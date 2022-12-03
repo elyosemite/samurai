@@ -5,3 +5,5 @@ from .pen import Pen
 from .write_machine import WriteMachine
 from .product_cart import ProductCart
 from .another_product import AnotherProduct
+from .address import Address
+from .customer import Customer
