@@ -4,4 +4,3 @@ class WriteMachine:
 
     def write(self):
         print(f'Write Machine is writing ...')
-        

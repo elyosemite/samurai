@@ -5,7 +5,12 @@ from pix import (
 
 from models import (
     Product,
-    User
+    User,
+    Writer,
+    Pen,
+    WriteMachine,
+    ProductCart,
+    AnotherProduct
 )
 
 p1 = Person('Yuri', 24)
@@ -32,8 +37,31 @@ a2 = User()
 
 a1.algum_atributo_meu = 457454
 
-print(a1.__dict__)
-print(a2.__dict__)
+# Association
+writer_yuri = Writer("Yuri Melo")
+my_pen = Pen("BIC")
+my_write_machine = WriteMachine()
 
-print(a1.algum_atributo_meu)
-print(a2.algum_atributo_meu)
+print(writer_yuri.name)
+print(my_pen.brand)
+
+writer_yuri.tool = my_write_machine
+writer_yuri.tool.write()
+
+writer_yuri.tool = my_pen
+writer_yuri.tool.write()
+
+# Aggregation
+
+product01 = AnotherProduct("Camiseta Gucci", 9000)
+product02 = AnotherProduct("iPhone 14 Pro Max", 14000)
+product03 = AnotherProduct("Calça Louis Vuitton", 10000)
+
+product_cart = ProductCart()
+product_cart.insert_product(product01)
+product_cart.insert_product(product02)
+product_cart.insert_product(product03)
+
+product_cart.show_products()
+print("\n\nTotal a pagar: ")
+product_cart.total_sum()

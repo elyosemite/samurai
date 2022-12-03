@@ -1,5 +1,5 @@
 class Writer:
-    def __init_(self, name):
+    def __init__(self, name):
         self.__name = name
         self.__tool = None
     
