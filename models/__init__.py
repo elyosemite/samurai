@@ -1,5 +1,4 @@
 from .product import Product
-from .user import User
 from .writer import Writer
 from .pen import Pen
 from .write_machine import WriteMachine
@@ -7,3 +6,5 @@ from .product_cart import ProductCart
 from .another_product import AnotherProduct
 from .address import Address
 from .customer import Customer
+from .sam_token import Token
+from .solicitation_type import SolicitationType
