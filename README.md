@@ -1,12 +1,11 @@
-Here's a suggested README for your Samurai project:
-
----
-
 # Samurai
 
 Welcome to **Samurai** – a knowledge hub for Python enthusiasts!
 
+![](./assets/samurai.jpg "Samurai")
+
 This repository is a curated collection of my learnings and explorations in Python, including but not limited to:
+
 
 - **Libraries**: Exploring new and powerful Python libraries.
 - **Design Patterns**: Understanding and implementing various design patterns in Python.
