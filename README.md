@@ -28,7 +28,7 @@ If you have ideas, suggestions, or want to contribute, feel free to open a pull 
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/samurai.git
+   git clone https://github.com/elyosemite/samurai.git
    ```
 2. **Explore the folders**: Each folder is dedicated to a specific topic. Start with any that interests you!
 3. **Experiment**: Try out the examples, modify the code, and learn by doing.
