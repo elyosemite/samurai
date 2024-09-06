@@ -25,19 +25,8 @@ class StartUp:
         solicitation = Solicitation(token)
 
         balancer = ShowBalancerHandler()
-        chain_of_responsability = SignInHandler(repository)
-        print(chain_of_responsability.handle(solicitation))
+        signInHandler = SignInHandler(repository)
 
-        # match value:
-        #     case "-c" | "--create-account" | "-create":
-        #         chain_of_responsability.handle(solicitation)
-        #         print("Criando conta")
-            
-        #     case "-i" | "--sing-in" | "--sing-in-acount":
-        #         print("Entrando na sua conta")
-            
-        #     case "-t" | "--tranfer-cash":
-        #         print("Transferindo dinheiro para outra conta ...")
-
-        #     case "-s" | "--show-balancer":
-        #         print("Seu saldo")
+        signInHandler.set_next_handler(balancer)
+        
+        signInHandler.handle(solicitation)
