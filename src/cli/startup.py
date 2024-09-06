@@ -1,8 +1,9 @@
 from cli.menu import Menu
 from data_access.account_repository import AccountRepository
-from handlers.sing_in_handler import SingInHandler
+from handlers.show_balancer_handler import ShowBalancerHandler
+from handlers.sign_in_handler import SignInHandler
 from models.solicitation import Solicitation
-from models.sam_token import Token
+from models.sam_token import SamToken
 from models.solicitation_type import SolicitationType
 
 class StartUp:
@@ -15,13 +16,21 @@ class StartUp:
         value = str(input("Type a command (number or shortcut): "))
 
         repository = AccountRepository()
-        token = Token("--create-account", "yuri_conta")
-        solicitation = Solicitation(token, SolicitationType.SING_UP)
 
-        chain_of_responsability = SingInHandler(repository).set_next_handler()
+        splittedValue = value.split(" ")
+        token_key   = splittedValue[0]
+        token_value = splittedValue[1]
+
+        token = SamToken(token_key, token_value)
+        solicitation = Solicitation(token)
+
+        balancer = ShowBalancerHandler()
+        chain_of_responsability = SignInHandler(repository)
+        print(chain_of_responsability.handle(solicitation))
 
         # match value:
         #     case "-c" | "--create-account" | "-create":
+        #         chain_of_responsability.handle(solicitation)
         #         print("Criando conta")
             
         #     case "-i" | "--sing-in" | "--sing-in-acount":

@@ -16,4 +16,4 @@ class SignUpHandler(BaseHandler):
             solicitation.solicitation_type = SolicitationType.SING_UP
             return solicitation
             
-        return super().handle(solicitation);
+        return super().handle(solicitation)

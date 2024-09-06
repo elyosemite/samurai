@@ -1,4 +1,4 @@
-class Product(object):
+class Product:
     """description of class"""
     def __init__(self, name, price) -> None:
         self.name = name

@@ -22,7 +22,7 @@ class Person:
             print(f'{self.nome} não pode comer falando')
             return
 
-        print(f'{self.nome} está comendo');
+        print(f'{self.nome} está comendo')
         self.comendo = True
     
     def falar(self, mensagem):

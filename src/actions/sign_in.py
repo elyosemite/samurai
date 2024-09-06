@@ -1,5 +1,5 @@
-from data_access.account_repository import AccountRepository
 from models.user import User
+from data_access.account_repository import AccountRepository
 
 class SignIn:
     def __init__(self, repository: AccountRepository) -> None:

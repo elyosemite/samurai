@@ -6,5 +6,7 @@ from .product_cart import ProductCart
 from .another_product import AnotherProduct
 from .address import Address
 from .customer import Customer
-from .sam_token import Token
+from .sam_token import SamToken
 from .solicitation_type import SolicitationType
+from .user import User
+from .account import Account
