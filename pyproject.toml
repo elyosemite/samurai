@@ -1,0 +1,27 @@
+[project]
+name = "samurai"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Yuri Melo",email = "yurifullstack@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pydantic (>=2.11.7,<3.0.0)",
+    "fastapi (>=0.116.1,<0.117.0)",
+    "uvicorn[standard] (>=0.35.0,<0.36.0)",
+    "pytest (>=8.4.1,<9.0.0)",
+    "pytest-asyncio (>=1.1.0,<2.0.0)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+
