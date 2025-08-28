@@ -1,5 +1,4 @@
 from typing import Union
-import uuid
 from fastapi import FastAPI, HTTPException
 
 from src.domain.user import User
