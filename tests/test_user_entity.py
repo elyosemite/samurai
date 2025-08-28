@@ -16,3 +16,4 @@ def test_user_entity():
     assert user.occupation == "Chemical Engineer"
     assert user.company == "TechCorp"
     assert user.investiment == 0.0
+    assert isinstance(user, User)
