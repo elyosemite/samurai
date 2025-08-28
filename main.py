@@ -1,40 +1,15 @@
-from typing import Union
 from fastapi import FastAPI, HTTPException
 
-from src.domain.user import User
-from src.presentation.user_data_mode_response import UserDataModelResponse
-from src.presentation.user_data_model_request import UserDataModelRequest
+from src.application.create_user_handler import CreateUserHandler
+from src.application.create_user_request import CreateUserRequest
+from src.application.create_user_response import CreateUserResponse
 
 app = FastAPI(title="Policy Service")
 
-@app.get("/")
-def read_root():
-    return { "Hello": "World" }
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return { "item_id": item_id, "q": q }
-
-@app.post("/users/", response_model=UserDataModelResponse)
-async def create(request: UserDataModelRequest):
+@app.post("/users/", response_model=CreateUserResponse)
+async def create(request: CreateUserRequest):
     try:
-        user = User(request.name,
-                    request.age,
-                    request.city,
-                    request.occupation,
-                    request.company,
-                    request.investiment)
-        
-        data_model = UserDataModelResponse(
-            Id=user.id,
-            name=user.name,
-            age=user.age,
-            city=user.city,
-            occupation=user.occupation,
-            company=user.company,
-            investiment=user.investiment
-        )
-
-        return data_model
+        handler = CreateUserHandler()
+        return handler.Handler(request)
     except Exception as e:
         return HTTPException(status_code=400, detail=str(e))

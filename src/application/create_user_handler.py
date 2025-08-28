@@ -1,12 +1,9 @@
-
 from src.application.create_user_request import CreateUserRequest
+from src.application.create_user_response import CreateUserResponse
 from src.domain.user import User
 
 class CreateUserHandler:
-    def __init__(self):
-        pass
-
-    def Handler(self, request: CreateUserRequest):
+    def Handler(self, request: CreateUserRequest) -> CreateUserResponse:
         user = User(
             name=request.name,
             age=request.age,
@@ -15,4 +12,13 @@ class CreateUserHandler:
             company=request.company,
             investiment=request.investiment
         )
-        return {"status": "User created", "user": user}
+        
+        return CreateUserResponse(
+            id=user.id,
+            name=user.name,
+            age=user.age,
+            city=user.city,
+            occupation=user.occupation,
+            company=user.company,
+            investiment=user.investiment
+        )
