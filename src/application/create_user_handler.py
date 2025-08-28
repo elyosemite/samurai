@@ -9,10 +9,10 @@ class CreateUserHandler:
     def Handler(self, request: CreateUserRequest):
         user = User(
             name=request.name,
-            age=30,
-            city="Unknown",
-            occupation="Unknown",
-            company="Unknown",
-            investiment=0.0
+            age=request.age,
+            city=request.city,
+            occupation=request.occupation,
+            company=request.company,
+            investiment=request.investiment
         )
         return {"status": "User created", "user": user}
