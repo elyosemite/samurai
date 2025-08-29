@@ -36,7 +36,6 @@ def test_user_investiment_management():
     assert isinstance(user.get_events[1], UserInvestimentDecreasedEvent)
     assert user.get_events[0].amount == 500.0
     assert user.get_events[1].amount == 200.0
-    
 
 def test_user_investiment_decrease():
     user = User(
