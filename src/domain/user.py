@@ -10,3 +10,15 @@ class User(Entity):
         self.company = company
         self.investiment = investiment
         print(f"User created with ID: {self.id}")
+    
+    def add_investiment(self, amount: float):
+        if amount <= 0:
+            raise ValueError("Investiment amount must be positive.")
+        self.investiment += amount
+    
+    def decrease_investiment(self, amount: float):
+        if amount <= 0:
+            raise ValueError("Investiment amount must be positive.")
+        if amount > self.investiment:
+            raise ValueError("Cannot decrease investiment below zero.")
+        self.investiment -= amount
