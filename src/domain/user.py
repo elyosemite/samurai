@@ -1,6 +1,7 @@
-from src.domain.entity import Entity
+from src.domain.aggregate_root import AggregateRoot
+from src.domain.events import UserInvestimentDecreasedEvent, UserInvestimentIncreasedEvent
 
-class User(Entity):
+class User(AggregateRoot):
     def __init__(self, name: str, age: int, city: str, occupation: str, company: str, investiment: float, entity_id=None):
         super().__init__(entity_id)
         self.name = name
@@ -15,6 +16,7 @@ class User(Entity):
         if amount <= 0:
             raise ValueError("Investiment amount must be positive.")
         self.investiment += amount
+        self.raise_event(UserInvestimentIncreasedEvent(self.id, amount))
     
     def decrease_investiment(self, amount: float):
         if amount <= 0:
@@ -22,3 +24,4 @@ class User(Entity):
         if amount > self.investiment:
             raise ValueError("Cannot decrease investiment below zero.")
         self.investiment -= amount
+        self.raise_event(UserInvestimentDecreasedEvent(self.id, amount))
