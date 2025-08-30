@@ -2,7 +2,12 @@ from src.application.command_handler.create_user.create_user_request import Crea
 from src.application.command_handler.create_user.create_user_response import CreateUserResponse
 from src.domain.user import User
 
+from src.infra import InMemoryRepository
+
 class CreateUserHandler:
+    def __init__(self, InMemoryRepository = None):
+        pass
+
     def Handler(self, request: CreateUserRequest) -> CreateUserResponse:
         user = User(
             name=request.name,
