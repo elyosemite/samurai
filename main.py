@@ -1,8 +1,8 @@
 from fastapi import FastAPI, HTTPException
 
-from src.application.create_user_handler import CreateUserHandler
-from src.application.create_user_request import CreateUserRequest
-from src.application.create_user_response import CreateUserResponse
+from src.application.command_handler import CreateUserHandler
+from src.application.command_handler import CreateUserRequest
+from src.application.command_handler import CreateUserResponse
 
 app = FastAPI(title="Policy Service")
 

@@ -1,5 +1,5 @@
-from src.application.create_user_request import CreateUserRequest
-from src.application.create_user_response import CreateUserResponse
+from src.application.command_handler.create_user.create_user_request import CreateUserRequest
+from src.application.command_handler.create_user.create_user_response import CreateUserResponse
 from src.domain.user import User
 
 class CreateUserHandler:
